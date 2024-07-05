@@ -4,21 +4,20 @@ import React from 'react'
 async function fetchBlogs(){
   try {
     const apiResponse = await fetch("http://localhost:3000/api/get-blogs",{
-      method:GET,
+      method:"GET",
       cache: "no-store"
     })
     const blogs = await apiResponse.json()
     return blogs?.data
   } catch (error) {
-    // throw new Error(error);
-    console.log("ERROORORR");
+    throw new Error(error);
   }
 }
 const Blogs = async () => {
-  const blogList = fetchBlogs();
+  const blogList = await fetchBlogs();
   console.log(blogList);
   return (
-    <BlogOverview/>
+    <BlogOverview blogList={blogList}/>
   )
 }
 

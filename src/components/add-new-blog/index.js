@@ -19,9 +19,6 @@ const AddNewBlog = ({openDialog, setOpenDialog,loading,setLoading,blogData,setBl
         <Button onClick={()=>{setOpenDialog(true)}} >Add New Blog</Button>
       </div>
       <Dialog open={openDialog} onOpenChange={setOpenDialog}>
-      <DialogTrigger asChild>
-        <Button variant="outline">Edit Profile</Button>
-      </DialogTrigger>
       <DialogContent className="sm:max-w-[425px]">
         <DialogHeader>
           <DialogTitle>Add new Blog</DialogTitle>

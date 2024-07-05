@@ -4,6 +4,7 @@ import { NextResponse } from "next/server";
 
 
 export async function GET(){
+    console.log("hgellkjdkdjajdhajdhdjhHELLOOO");
     try {
         await connectToDB();
         const response = await Blog.find({});
