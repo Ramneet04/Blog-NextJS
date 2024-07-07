@@ -1,5 +1,6 @@
 import connectToDB from "@/database"
 import Blog from "@/models/blog";
+import { NextResponse } from "next/server";
 
 
 export async function DELETE(req){
@@ -13,7 +14,7 @@ export async function DELETE(req){
                 message:"BLOG ID REQUIRED",
             })  
         }
-        const deletedBlog = await Blog.findOneAndDelete(getCurrentBlogId);
+        const deletedBlog = await Blog.findByIdAndDelete(getCurrentBlogId);
         if(deletedBlog){
             return NextResponse.json({
                 success:true,
