@@ -31,6 +31,9 @@ const BlogOverview = ({blogList}) => {
         setOpenDialog(false);
         router.refresh();
       }
+      else{
+        setLoading(false);
+      }
       console.log(result);
     } catch (error) {
       console.log(error);
